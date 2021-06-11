@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{B12702AD-ABFB-343A-A199-8E24837244A3}</ProjectGuid>
+    <Keyword>Qt4VSv1.0</Keyword>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+    <ProjectName>PointCloudTools</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <PropertyGroup Condition="'$(QtMsBuild)'=='' or !Exists('$(QtMsBuild)\qt.targets')">
+    <QtMsBuild>$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>..\..\$(Configuration)\</OutDir>
+    <IncludePath>D:\Program Files\PCL 1.8.1\include\pcl-1.8;D:\Program Files\PCL 1.8.1\3rdParty\Boost\include\boost-1_64;D:\Program Files\PCL 1.8.1\3rdParty\Eigen\eigen3;D:\Program Files\PCL 1.8.1\3rdParty\FLANN\include;D:\Program Files\PCL 1.8.1\3rdParty\Qhull\include;D:\Program Files\PCL 1.8.1\3rdParty\OpenNI2\Include;D:\Program Files\PCL 1.8.1\3rdParty\VTK\include\vtk-8.0;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\Program Files\PCL 1.8.1\lib;D:\Program Files\PCL 1.8.1\3rdParty\FLANN\lib;D:\Program Files\PCL 1.8.1\3rdParty\Boost\lib;D:\Program Files\PCL 1.8.1\3rdParty\Qhull\lib;D:\Program Files\PCL 1.8.1\3rdParty\OpenNI2\Lib;D:\Program Files\PCL 1.8.1\3rdParty\VTK\lib;$(LibraryPath)</LibraryPath>
+    <IntDir>..\..\intermediate\$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>..\..\$(Configuration)\</OutDir>
+    <IncludePath>D:\Program Files\PCL 1.8.1\include\pcl-1.8;D:\Program Files\PCL 1.8.1\3rdParty\Boost\include\boost-1_64;D:\Program Files\PCL 1.8.1\3rdParty\Eigen\eigen3;D:\Program Files\PCL 1.8.1\3rdParty\FLANN\include;D:\Program Files\PCL 1.8.1\3rdParty\Qhull\include;D:\Program Files\PCL 1.8.1\3rdParty\Vtk_Release\include\vtk-8.0;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\Program Files\PCL 1.8.1\lib;D:\Program Files\PCL 1.8.1\3rdParty\FLANN\lib;D:\Program Files\PCL 1.8.1\3rdParty\Boost\lib;D:\Program Files\PCL 1.8.1\3rdParty\Vtk_Release\lib;D:\Program Files\PCL 1.8.1\3rdParty\Qhull\lib;D:\Program Files\PCL 1.8.1\3rdParty\OpenNI2\Lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') or !Exists('$(QtMsBuild)\qt.props')">
+    <Message Importance="High" Text="QtMsBuild: could not locate qt.targets, qt.props; project may not build correctly." />
+  </Target>
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.props')">
+    <Import Project="$(QtMsBuild)\qt.props" />
+  </ImportGroup>
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="Shared" />
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <PreprocessorDefinitions>UNICODE;_UNICODE;WIN32;WIN64;QT_3DCORE_LIB;QT_3DANIMATION_LIB;QT_3DEXTRAS_LIB;QT_3DINPUT_LIB;QT_3DLOGIC_LIB;QT_3DRENDER_LIB;QT_3DQUICK_LIB;QT_3DQUICKANIMATION_LIB;QT_3DQUICKEXTRAS_LIB;QT_3DQUICKINPUT_LIB;QT_3DQUICKRENDER_LIB;QT_3DQUICKSCENE2D_LIB;QT_CORE_LIB;QT_GUI_LIB;QT_MULTIMEDIAWIDGETS_LIB;QT_OPENGL_LIB;QT_OPENGLEXTENSIONS_LIB;QT_WIDGETS_LIB;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;PCL_NO_PRECOMPILE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\Qt3DCore;$(QTDIR)\include\Qt3DAnimation;$(QTDIR)\include\Qt3DExtras;$(QTDIR)\include\Qt3DInput;$(QTDIR)\include\Qt3DLogic;$(QTDIR)\include\Qt3DRender;$(QTDIR)\include\Qt3DQuick;$(QTDIR)\include\Qt3DQuickAnimation;$(QTDIR)\include\Qt3DQuickExtras;$(QTDIR)\include\Qt3DQuickInput;$(QTDIR)\include\Qt3DQuickRender;$(QTDIR)\include\Qt3DQuickScene2D;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtMultimediaWidgets;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtOpenGLExtensions;$(QTDIR)\include\QtWidgets;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>Disabled</Optimization>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <DisableSpecificWarnings>4819</DisableSpecificWarnings>
+      <SDLCheck>false</SDLCheck>
+      <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
+      <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <OutputFile>$(OutDir)\$(ProjectName).exe</OutputFile>
+      <AdditionalLibraryDirectories>$(QTDIR)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>qtmaind.lib;Qt53DCored.lib;Qt53DAnimationd.lib;Qt53DExtrasd.lib;Qt53DInputd.lib;Qt53DLogicd.lib;Qt53DRenderd.lib;Qt53DQuickd.lib;Qt53DQuickAnimationd.lib;Qt53DQuickExtrasd.lib;Qt53DQuickInputd.lib;Qt53DQuickRenderd.lib;Qt53DQuickScene2Dd.lib;Qt5Cored.lib;Qt5Guid.lib;Qt5MultimediaWidgetsd.lib;Qt5OpenGLd.lib;opengl32.lib;glu32.lib;Qt5OpenGLExtensionsd.lib;Qt5Widgetsd.lib;pcl_common_debug.lib;pcl_features_debug.lib;pcl_filters_debug.lib;pcl_io_debug.lib;pcl_io_ply_debug.lib;pcl_kdtree_debug.lib;pcl_keypoints_debug.lib;pcl_ml_debug.lib;pcl_octree_debug.lib;pcl_outofcore_debug.lib;pcl_people_debug.lib;pcl_recognition_debug.lib;pcl_registration_debug.lib;pcl_sample_consensus_debug.lib;pcl_search_debug.lib;pcl_segmentation_debug.lib;pcl_stereo_debug.lib;pcl_surface_debug.lib;pcl_tracking_debug.lib;pcl_visualization_debug.lib;flann_cpp_s-gd.lib;flann_cpp-gd.lib;flann_s-gd.lib;flann-gd.lib;libboost_atomic-vc141-mt-gd-1_64.lib;libboost_bzip2-vc141-mt-gd-1_64.lib;libboost_chrono-vc141-mt-gd-1_64.lib;libboost_container-vc141-mt-gd-1_64.lib;libboost_context-vc141-mt-gd-1_64.lib;libboost_coroutine-vc141-mt-gd-1_64.lib;libboost_date_time-vc141-mt-gd-1_64.lib;libboost_exception-vc141-mt-gd-1_64.lib;libboost_fiber-vc141-mt-gd-1_64.lib;libboost_filesystem-vc141-mt-gd-1_64.lib;libboost_graph_parallel-vc141-mt-gd-1_64.lib;libboost_graph-vc141-mt-gd-1_64.lib;libboost_iostreams-vc141-mt-gd-1_64.lib;libboost_locale-vc141-mt-gd-1_64.lib;libboost_log_setup-vc141-mt-gd-1_64.lib;libboost_log-vc141-mt-gd-1_64.lib;libboost_math_c99f-vc141-mt-gd-1_64.lib;libboost_math_c99l-vc141-mt-gd-1_64.lib;libboost_math_c99-vc141-mt-gd-1_64.lib;libboost_math_tr1f-vc141-mt-gd-1_64.lib;libboost_math_tr1l-vc141-mt-gd-1_64.lib;libboost_math_tr1-vc141-mt-gd-1_64.lib;libboost_mpi-vc141-mt-gd-1_64.lib;libboost_numpy3-vc141-mt-gd-1_64.lib;libboost_numpy-vc141-mt-gd-1_64.lib;libboost_prg_exec_monitor-vc141-mt-gd-1_64.lib;libboost_program_options-vc141-mt-gd-1_64.lib;libboost_python3-vc141-mt-gd-1_64.lib;libboost_python-vc141-mt-gd-1_64.lib;libboost_random-vc141-mt-gd-1_64.lib;libboost_regex-vc141-mt-gd-1_64.lib;libboost_serialization-vc141-mt-gd-1_64.lib;libboost_signals-vc141-mt-gd-1_64.lib;libboost_system-vc141-mt-gd-1_64.lib;libboost_test_exec_monitor-vc141-mt-gd-1_64.lib;libboost_thread-vc141-mt-gd-1_64.lib;libboost_timer-vc141-mt-gd-1_64.lib;libboost_type_erasure-vc141-mt-gd-1_64.lib;libboost_unit_test_framework-vc141-mt-gd-1_64.lib;libboost_wave-vc141-mt-gd-1_64.lib;libboost_wserialization-vc141-mt-gd-1_64.lib;libboost_zlib-vc141-mt-gd-1_64.lib;qhull_d.lib;qhull_p_d.lib;qhull_r_d.lib;qhullcpp_d.lib;qhullstatic_d.lib;qhullstatic_r_d.lib;OpenNI2.lib;vtkalglib-8.0.lib;vtkChartsCore-8.0.lib;vtkCommonColor-8.0.lib;vtkCommonComputationalGeometry-8.0.lib;vtkCommonCore-8.0.lib;vtkCommonDataModel-8.0.lib;vtkCommonExecutionModel-8.0.lib;vtkCommonMath-8.0.lib;vtkCommonMisc-8.0.lib;vtkCommonSystem-8.0.lib;vtkCommonTransforms-8.0.lib;vtkDICOMParser-8.0.lib;vtkDomainsChemistry-8.0.lib;vtkDomainsChemistryOpenGL2-8.0.lib;vtkexoIIc-8.0.lib;vtkexpat-8.0.lib;vtkFiltersAMR-8.0.lib;vtkFiltersCore-8.0.lib;vtkFiltersExtraction-8.0.lib;vtkFiltersFlowPaths-8.0.lib;vtkFiltersGeneral-8.0.lib;vtkFiltersGeneric-8.0.lib;vtkFiltersGeometry-8.0.lib;vtkFiltersHybrid-8.0.lib;vtkFiltersHyperTree-8.0.lib;vtkFiltersImaging-8.0.lib;vtkFiltersModeling-8.0.lib;vtkFiltersParallel-8.0.lib;vtkFiltersParallelImaging-8.0.lib;vtkFiltersPoints-8.0.lib;vtkFiltersProgrammable-8.0.lib;vtkFiltersSelection-8.0.lib;vtkFiltersSMP-8.0.lib;vtkFiltersSources-8.0.lib;vtkFiltersStatistics-8.0.lib;vtkFiltersTexture-8.0.lib;vtkFiltersTopology-8.0.lib;vtkFiltersVerdict-8.0.lib;vtkfreetype-8.0.lib;vtkGeovisCore-8.0.lib;vtkgl2ps-8.0.lib;vtkglew-8.0.lib;vtkGUISupportQt-8.0.lib;vtkGUISupportQtSQL-8.0.lib;vtkhdf5_hl-8.0.lib;vtkhdf5-8.0.lib;vtkImagingColor-8.0.lib;vtkImagingCore-8.0.lib;vtkImagingFourier-8.0.lib;vtkImagingGeneral-8.0.lib;vtkImagingHybrid-8.0.lib;vtkImagingMath-8.0.lib;vtkImagingMorphological-8.0.lib;vtkImagingSources-8.0.lib;vtkImagingStatistics-8.0.lib;vtkImagingStencil-8.0.lib;vtkInfovisCore-8.0.lib;vtkInfovisLayout-8.0.lib;vtkInteractionImage-8.0.lib;vtkInteractionStyle-8.0.lib;vtkInteractionWidgets-8.0.lib;vtkIOAMR-8.0.lib;vtkIOCore-8.0.lib;vtkIOEnSight-8.0.lib;vtkIOExodus-8.0.lib;vtkIOExport-8.0.lib;vtkIOExportOpenGL2-8.0.lib;vtkIOGeometry-8.0.lib;vtkIOImage-8.0.lib;vtkIOImport-8.0.lib;vtkIOInfovis-8.0.lib;vtkIOLegacy-8.0.lib;vtkIOLSDyna-8.0.lib;vtkIOMINC-8.0.lib;vtkIOMovie-8.0.lib;vtkIONetCDF-8.0.lib;vtkIOParallel-8.0.lib;vtkIOParallelXML-8.0.lib;vtkIOPLY-8.0.lib;vtkIOSQL-8.0.lib;vtkIOTecplotTable-8.0.lib;vtkIOVideo-8.0.lib;vtkIOXML-8.0.lib;vtkIOXMLParser-8.0.lib;vtkjpeg-8.0.lib;vtkjsoncpp-8.0.lib;vtklibharu-8.0.lib;vtklibxml2-8.0.lib;vtklz4-8.0.lib;vtkmetaio-8.0.lib;vtknetcdf_c++.lib;vtkNetCDF-8.0.lib;vtkoggtheora-8.0.lib;vtkParallelCore-8.0.lib;vtkpng-8.0.lib;vtkproj4-8.0.lib;vtkRenderingAnnotation-8.0.lib;vtkRenderingContext2D-8.0.lib;vtkRenderingContextOpenGL2-8.0.lib;vtkRenderingCore-8.0.lib;vtkRenderingFreeType-8.0.lib;vtkRenderingGL2PSOpenGL2-8.0.lib;vtkRenderingImage-8.0.lib;vtkRenderingLabel-8.0.lib;vtkRenderingLOD-8.0.lib;vtkRenderingOpenGL2-8.0.lib;vtkRenderingQt-8.0.lib;vtkRenderingVolume-8.0.lib;vtkRenderingVolumeOpenGL2-8.0.lib;vtksqlite-8.0.lib;vtksys-8.0.lib;vtkTestingGenericBridge-8.0.lib;vtkTestingIOSQL-8.0.lib;vtkTestingRendering-8.0.lib;vtktiff-8.0.lib;vtkverdict-8.0.lib;vtkViewsContext2D-8.0.lib;vtkViewsCore-8.0.lib;vtkViewsInfovis-8.0.lib;vtkViewsQt-8.0.lib;vtkzlib-8.0.lib;QVTKWidgetPlugin.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <QtMoc>
+      <OutputFile>.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</OutputFile>
+      <ExecutionDescription>Moc'ing %(Identity)...</ExecutionDescription>
+      <IncludePath>.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\Qt3DCore;$(QTDIR)\include\Qt3DAnimation;$(QTDIR)\include\Qt3DExtras;$(QTDIR)\include\Qt3DInput;$(QTDIR)\include\Qt3DLogic;$(QTDIR)\include\Qt3DRender;$(QTDIR)\include\Qt3DQuick;$(QTDIR)\include\Qt3DQuickAnimation;$(QTDIR)\include\Qt3DQuickExtras;$(QTDIR)\include\Qt3DQuickInput;$(QTDIR)\include\Qt3DQuickRender;$(QTDIR)\include\Qt3DQuickScene2D;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtMultimediaWidgets;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtOpenGLExtensions;$(QTDIR)\include\QtWidgets;%(AdditionalIncludeDirectories)</IncludePath>
+      <Define>UNICODE;_UNICODE;WIN32;WIN64;QT_3DCORE_LIB;QT_3DANIMATION_LIB;QT_3DEXTRAS_LIB;QT_3DINPUT_LIB;QT_3DLOGIC_LIB;QT_3DRENDER_LIB;QT_3DQUICK_LIB;QT_3DQUICKANIMATION_LIB;QT_3DQUICKEXTRAS_LIB;QT_3DQUICKINPUT_LIB;QT_3DQUICKRENDER_LIB;QT_3DQUICKSCENE2D_LIB;QT_CORE_LIB;QT_GUI_LIB;QT_MULTIMEDIAWIDGETS_LIB;QT_OPENGL_LIB;QT_OPENGLEXTENSIONS_LIB;QT_WIDGETS_LIB;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</Define>
+      <QTDIR>$(QTDIR)</QTDIR>
+    </QtMoc>
+    <QtUic>
+      <ExecutionDescription>Uic'ing %(Identity)...</ExecutionDescription>
+      <OutputFile>.\GeneratedFiles\ui_%(Filename).h</OutputFile>
+      <QTDIR>$(QTDIR)</QTDIR>
+    </QtUic>
+    <QtRcc>
+      <ExecutionDescription>Rcc'ing %(Identity)...</ExecutionDescription>
+      <OutputFile>.\GeneratedFiles\qrc_%(Filename).cpp</OutputFile>
+      <QTDIR>$(QTDIR)</QTDIR>
+    </QtRcc>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <PreprocessorDefinitions>UNICODE;_UNICODE;WIN32;WIN64;QT_NO_DEBUG;NDEBUG;QT_3DCORE_LIB;QT_3DANIMATION_LIB;QT_3DEXTRAS_LIB;QT_3DINPUT_LIB;QT_3DLOGIC_LIB;QT_3DRENDER_LIB;QT_3DQUICK_LIB;QT_3DQUICKANIMATION_LIB;QT_3DQUICKEXTRAS_LIB;QT_3DQUICKINPUT_LIB;QT_3DQUICKRENDER_LIB;QT_3DQUICKSCENE2D_LIB;QT_CORE_LIB;QT_GUI_LIB;QT_MULTIMEDIAWIDGETS_LIB;QT_OPENGL_LIB;QT_OPENGLEXTENSIONS_LIB;QT_WIDGETS_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\Qt3DCore;$(QTDIR)\include\Qt3DAnimation;$(QTDIR)\include\Qt3DExtras;$(QTDIR)\include\Qt3DInput;$(QTDIR)\include\Qt3DLogic;$(QTDIR)\include\Qt3DRender;$(QTDIR)\include\Qt3DQuick;$(QTDIR)\include\Qt3DQuickAnimation;$(QTDIR)\include\Qt3DQuickExtras;$(QTDIR)\include\Qt3DQuickInput;$(QTDIR)\include\Qt3DQuickRender;$(QTDIR)\include\Qt3DQuickScene2D;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtMultimediaWidgets;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtOpenGLExtensions;$(QTDIR)\include\QtWidgets;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat />
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <DisableSpecificWarnings>4819</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <OutputFile>$(OutDir)\$(ProjectName).exe</OutputFile>
+      <AdditionalLibraryDirectories>$(QTDIR)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <AdditionalDependencies>qtmain.lib;Qt53DCore.lib;Qt53DAnimation.lib;Qt53DExtras.lib;Qt53DInput.lib;Qt53DLogic.lib;Qt53DRender.lib;Qt53DQuick.lib;Qt53DQuickAnimation.lib;Qt53DQuickExtras.lib;Qt53DQuickInput.lib;Qt53DQuickRender.lib;Qt53DQuickScene2D.lib;Qt5Core.lib;Qt5Gui.lib;Qt5MultimediaWidgets.lib;Qt5OpenGL.lib;opengl32.lib;glu32.lib;Qt5OpenGLExtensions.lib;Qt5Widgets.lib;pcl_common_release.lib;pcl_features_release.lib;pcl_filters_release.lib;pcl_io_release.lib;pcl_io_ply_release.lib;pcl_kdtree_release.lib;pcl_keypoints_release.lib;pcl_ml_release.lib;pcl_octree_release.lib;pcl_outofcore_release.lib;pcl_people_release.lib;pcl_recognition_release.lib;pcl_registration_release.lib;pcl_sample_consensus_release.lib;pcl_search_release.lib;pcl_segmentation_release.lib;pcl_stereo_release.lib;pcl_surface_release.lib;pcl_tracking_release.lib;pcl_visualization_release.lib;flann_cpp_s.lib;flann_cpp.lib;flann_s.lib;flann.lib;libboost_atomic-vc141-mt-1_64.lib;libboost_bzip2-vc141-mt-1_64.lib;libboost_chrono-vc141-mt-1_64.lib;libboost_container-vc141-mt-1_64.lib;libboost_context-vc141-mt-1_64.lib;libboost_coroutine-vc141-mt-1_64.lib;libboost_date_time-vc141-mt-1_64.lib;libboost_exception-vc141-mt-1_64.lib;libboost_fiber-vc141-mt-1_64.lib;libboost_filesystem-vc141-mt-1_64.lib;libboost_graph_parallel-vc141-mt-1_64.lib;libboost_graph-vc141-mt-1_64.lib;libboost_iostreams-vc141-mt-1_64.lib;libboost_locale-vc141-mt-1_64.lib;libboost_log_setup-vc141-mt-1_64.lib;libboost_log-vc141-mt-1_64.lib;libboost_math_c99f-vc141-mt-1_64.lib;libboost_math_c99l-vc141-mt-1_64.lib;libboost_math_c99-vc141-mt-1_64.lib;libboost_math_tr1f-vc141-mt-1_64.lib;libboost_math_tr1l-vc141-mt-1_64.lib;libboost_math_tr1-vc141-mt-1_64.lib;libboost_mpi-vc141-mt-1_64.lib;libboost_numpy3-vc141-mt-1_64.lib;libboost_numpy-vc141-mt-1_64.lib;libboost_prg_exec_monitor-vc141-mt-1_64.lib;libboost_program_options-vc141-mt-1_64.lib;libboost_python3-vc141-mt-1_64.lib;libboost_python-vc141-mt-1_64.lib;libboost_random-vc141-mt-1_64.lib;libboost_regex-vc141-mt-1_64.lib;libboost_serialization-vc141-mt-1_64.lib;libboost_signals-vc141-mt-1_64.lib;libboost_system-vc141-mt-1_64.lib;libboost_test_exec_monitor-vc141-mt-1_64.lib;libboost_thread-vc141-mt-1_64.lib;libboost_timer-vc141-mt-1_64.lib;libboost_type_erasure-vc141-mt-1_64.lib;libboost_unit_test_framework-vc141-mt-1_64.lib;libboost_wave-vc141-mt-1_64.lib;libboost_wserialization-vc141-mt-1_64.lib;libboost_zlib-vc141-mt-1_64.lib;qhull.lib;qhull_p.lib;qhull_r.lib;qhullcpp.lib;qhullstatic.lib;qhullstatic_r.lib;OpenNI2.lib;vtkalglib-8.0.lib;vtkChartsCore-8.0.lib;vtkCommonColor-8.0.lib;vtkCommonComputationalGeometry-8.0.lib;vtkCommonCore-8.0.lib;vtkCommonDataModel-8.0.lib;vtkCommonExecutionModel-8.0.lib;vtkCommonMath-8.0.lib;vtkCommonMisc-8.0.lib;vtkCommonSystem-8.0.lib;vtkCommonTransforms-8.0.lib;vtkDICOMParser-8.0.lib;vtkDomainsChemistry-8.0.lib;vtkDomainsChemistryOpenGL2-8.0.lib;vtkexoIIc-8.0.lib;vtkexpat-8.0.lib;vtkFiltersAMR-8.0.lib;vtkFiltersCore-8.0.lib;vtkFiltersExtraction-8.0.lib;vtkFiltersFlowPaths-8.0.lib;vtkFiltersGeneral-8.0.lib;vtkFiltersGeneric-8.0.lib;vtkFiltersGeometry-8.0.lib;vtkFiltersHybrid-8.0.lib;vtkFiltersHyperTree-8.0.lib;vtkFiltersImaging-8.0.lib;vtkFiltersModeling-8.0.lib;vtkFiltersParallel-8.0.lib;vtkFiltersParallelImaging-8.0.lib;vtkFiltersPoints-8.0.lib;vtkFiltersProgrammable-8.0.lib;vtkFiltersSelection-8.0.lib;vtkFiltersSMP-8.0.lib;vtkFiltersSources-8.0.lib;vtkFiltersStatistics-8.0.lib;vtkFiltersTexture-8.0.lib;vtkFiltersTopology-8.0.lib;vtkFiltersVerdict-8.0.lib;vtkfreetype-8.0.lib;vtkGeovisCore-8.0.lib;vtkgl2ps-8.0.lib;vtkglew-8.0.lib;vtkGUISupportQt-8.0.lib;vtkGUISupportQtSQL-8.0.lib;vtkhdf5_hl-8.0.lib;vtkhdf5-8.0.lib;vtkImagingColor-8.0.lib;vtkImagingCore-8.0.lib;vtkImagingFourier-8.0.lib;vtkImagingGeneral-8.0.lib;vtkImagingHybrid-8.0.lib;vtkImagingMath-8.0.lib;vtkImagingMorphological-8.0.lib;vtkImagingSources-8.0.lib;vtkImagingStatistics-8.0.lib;vtkImagingStencil-8.0.lib;vtkInfovisCore-8.0.lib;vtkInfovisLayout-8.0.lib;vtkInteractionImage-8.0.lib;vtkInteractionStyle-8.0.lib;vtkInteractionWidgets-8.0.lib;vtkIOAMR-8.0.lib;vtkIOCore-8.0.lib;vtkIOEnSight-8.0.lib;vtkIOExodus-8.0.lib;vtkIOExport-8.0.lib;vtkIOExportOpenGL2-8.0.lib;vtkIOGeometry-8.0.lib;vtkIOImage-8.0.lib;vtkIOImport-8.0.lib;vtkIOInfovis-8.0.lib;vtkIOLegacy-8.0.lib;vtkIOLSDyna-8.0.lib;vtkIOMINC-8.0.lib;vtkIOMovie-8.0.lib;vtkIONetCDF-8.0.lib;vtkIOParallel-8.0.lib;vtkIOParallelXML-8.0.lib;vtkIOPLY-8.0.lib;vtkIOSQL-8.0.lib;vtkIOTecplotTable-8.0.lib;vtkIOVideo-8.0.lib;vtkIOXML-8.0.lib;vtkIOXMLParser-8.0.lib;vtkjpeg-8.0.lib;vtkjsoncpp-8.0.lib;vtklibharu-8.0.lib;vtklibxml2-8.0.lib;vtklz4-8.0.lib;vtkmetaio-8.0.lib;vtknetcdf_c++.lib;vtkNetCDF-8.0.lib;vtkoggtheora-8.0.lib;vtkParallelCore-8.0.lib;vtkpng-8.0.lib;vtkproj4-8.0.lib;vtkRenderingAnnotation-8.0.lib;vtkRenderingContext2D-8.0.lib;vtkRenderingContextOpenGL2-8.0.lib;vtkRenderingCore-8.0.lib;vtkRenderingFreeType-8.0.lib;vtkRenderingGL2PSOpenGL2-8.0.lib;vtkRenderingImage-8.0.lib;vtkRenderingLabel-8.0.lib;vtkRenderingLOD-8.0.lib;vtkRenderingOpenGL2-8.0.lib;vtkRenderingQt-8.0.lib;vtkRenderingVolume-8.0.lib;vtkRenderingVolumeOpenGL2-8.0.lib;vtksqlite-8.0.lib;vtksys-8.0.lib;vtkTestingGenericBridge-8.0.lib;vtkTestingIOSQL-8.0.lib;vtkTestingRendering-8.0.lib;vtktiff-8.0.lib;vtkverdict-8.0.lib;vtkViewsContext2D-8.0.lib;vtkViewsCore-8.0.lib;vtkViewsInfovis-8.0.lib;vtkViewsQt-8.0.lib;vtkzlib-8.0.lib;QVTKWidgetPlugin.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <QtMoc>
+      <OutputFile>.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</OutputFile>
+      <ExecutionDescription>Moc'ing %(Identity)...</ExecutionDescription>
+      <IncludePath>.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\Qt3DCore;$(QTDIR)\include\Qt3DAnimation;$(QTDIR)\include\Qt3DExtras;$(QTDIR)\include\Qt3DInput;$(QTDIR)\include\Qt3DLogic;$(QTDIR)\include\Qt3DRender;$(QTDIR)\include\Qt3DQuick;$(QTDIR)\include\Qt3DQuickAnimation;$(QTDIR)\include\Qt3DQuickExtras;$(QTDIR)\include\Qt3DQuickInput;$(QTDIR)\include\Qt3DQuickRender;$(QTDIR)\include\Qt3DQuickScene2D;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtMultimediaWidgets;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtOpenGLExtensions;$(QTDIR)\include\QtWidgets;%(AdditionalIncludeDirectories)</IncludePath>
+      <Define>UNICODE;_UNICODE;WIN32;WIN64;QT_NO_DEBUG;NDEBUG;QT_3DCORE_LIB;QT_3DANIMATION_LIB;QT_3DEXTRAS_LIB;QT_3DINPUT_LIB;QT_3DLOGIC_LIB;QT_3DRENDER_LIB;QT_3DQUICK_LIB;QT_3DQUICKANIMATION_LIB;QT_3DQUICKEXTRAS_LIB;QT_3DQUICKINPUT_LIB;QT_3DQUICKRENDER_LIB;QT_3DQUICKSCENE2D_LIB;QT_CORE_LIB;QT_GUI_LIB;QT_MULTIMEDIAWIDGETS_LIB;QT_OPENGL_LIB;QT_OPENGLEXTENSIONS_LIB;QT_WIDGETS_LIB;%(PreprocessorDefinitions)</Define>
+      <QTDIR>$(QTDIR)</QTDIR>
+    </QtMoc>
+    <QtUic>
+      <ExecutionDescription>Uic'ing %(Identity)...</ExecutionDescription>
+      <OutputFile>.\GeneratedFiles\ui_%(Filename).h</OutputFile>
+      <QTDIR>$(QTDIR)</QTDIR>
+    </QtUic>
+    <QtRcc>
+      <ExecutionDescription>Rcc'ing %(Identity)...</ExecutionDescription>
+      <OutputFile>.\GeneratedFiles\qrc_%(Filename).cpp</OutputFile>
+      <QTDIR>$(QTDIR)</QTDIR>
+    </QtRcc>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="AboutWin.cpp" />
+    <ClCompile Include="Common.cpp" />
+    <ClCompile Include="MainWindow.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="PointCloudFile.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="MainWindow.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;D:\Qt\Qt5.9.5\5.9.5\msvc2017_64\include;.\GeneratedFiles\$(ConfigurationName);D:\Qt\Qt5.9.5\5.9.5\msvc2017_64\include\Qt3DCore;D:\Qt\Qt5.9.5\5.9.5\msvc2017_64\include\Qt3DAnimation;D:\Qt\Qt5.9.5\5.9.5\msvc2017_64\include\Qt3DExtras;D:\Qt\Qt5.9.5\5.9.5\msvc2017_64\include\Qt3DInput;D:\Qt\Qt5.9.5\5.9.5\msvc2017_64\include\Qt3DLogic;D:\Qt\Qt5.9.5\5.9.5\msvc2017_64\include\Qt3DRender;D:\Qt\Qt5.9.5\5.9.5\msvc2017_64\include\Qt3DQuick;D:\Qt\Qt5.9.5\5.9.5\msvc2017_64\include\Qt3DQuickAnimation;D:\Qt\Qt5.9.5\5.9.5\msvc2017_64\include\Qt3DQuickExtras;D:\Qt\Qt5.9.5\5.9.5\msvc2017_64\include\Qt3DQuickInput;D:\Qt\Qt5.9.5\5.9.5\msvc2017_64\include\Qt3DQuickRender;D:\Qt\Qt5.9.5\5.9.5\msvc2017_64\include\Qt3DQuickScene2D;D:\Qt\Qt5.9.5\5.9.5\msvc2017_64\include\QtCore;D:\Qt\Qt5.9.5\5.9.5\msvc2017_64\include\QtGui;D:\Qt\Qt5.9.5\5.9.5\msvc2017_64\include\QtANGLE;D:\Qt\Qt5.9.5\5.9.5\msvc2017_64\include\QtMultimediaWidgets;D:\Qt\Qt5.9.5\5.9.5\msvc2017_64\include\QtOpenGL;D:\Qt\Qt5.9.5\5.9.5\msvc2017_64\include\QtOpenGLExtensions;D:\Qt\Qt5.9.5\5.9.5\msvc2017_64\include\QtWidgets;D:\Program Files\PCL 1.8.0\3rdParty\Boost\include\boost-1_61;%(AdditionalIncludeDirectories)</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;D:\Qt\Qt5.9.5\5.9.5\msvc2017_64\include;.\GeneratedFiles\$(ConfigurationName);D:\Qt\Qt5.9.5\5.9.5\msvc2017_64\include\Qt3DCore;D:\Qt\Qt5.9.5\5.9.5\msvc2017_64\include\Qt3DAnimation;D:\Qt\Qt5.9.5\5.9.5\msvc2017_64\include\Qt3DExtras;D:\Qt\Qt5.9.5\5.9.5\msvc2017_64\include\Qt3DInput;D:\Qt\Qt5.9.5\5.9.5\msvc2017_64\include\Qt3DLogic;D:\Qt\Qt5.9.5\5.9.5\msvc2017_64\include\Qt3DRender;D:\Qt\Qt5.9.5\5.9.5\msvc2017_64\include\Qt3DQuick;D:\Qt\Qt5.9.5\5.9.5\msvc2017_64\include\Qt3DQuickAnimation;D:\Qt\Qt5.9.5\5.9.5\msvc2017_64\include\Qt3DQuickExtras;D:\Qt\Qt5.9.5\5.9.5\msvc2017_64\include\Qt3DQuickInput;D:\Qt\Qt5.9.5\5.9.5\msvc2017_64\include\Qt3DQuickRender;D:\Qt\Qt5.9.5\5.9.5\msvc2017_64\include\Qt3DQuickScene2D;D:\Qt\Qt5.9.5\5.9.5\msvc2017_64\include\QtCore;D:\Qt\Qt5.9.5\5.9.5\msvc2017_64\include\QtGui;D:\Qt\Qt5.9.5\5.9.5\msvc2017_64\include\QtANGLE;D:\Qt\Qt5.9.5\5.9.5\msvc2017_64\include\QtMultimediaWidgets;D:\Qt\Qt5.9.5\5.9.5\msvc2017_64\include\QtOpenGL;D:\Qt\Qt5.9.5\5.9.5\msvc2017_64\include\QtOpenGLExtensions;D:\Qt\Qt5.9.5\5.9.5\msvc2017_64\include\QtWidgets;%(AdditionalIncludeDirectories)</IncludePath>
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="AboutWin.ui" />
+    <QtUic Include="MainWindow.ui" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtRcc Include="PointCloudTools.qrc" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="AboutWin.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\Qt3DCore;$(QTDIR)\include\Qt3DAnimation;$(QTDIR)\include\Qt3DExtras;$(QTDIR)\include\Qt3DInput;$(QTDIR)\include\Qt3DLogic;$(QTDIR)\include\Qt3DRender;$(QTDIR)\include\Qt3DQuick;$(QTDIR)\include\Qt3DQuickAnimation;$(QTDIR)\include\Qt3DQuickExtras;$(QTDIR)\include\Qt3DQuickInput;$(QTDIR)\include\Qt3DQuickRender;$(QTDIR)\include\Qt3DQuickScene2D;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtMultimediaWidgets;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtOpenGLExtensions;$(QTDIR)\include\QtWidgets;D:\Program Files\PCL 1.8.0\3rdParty\Boost\include\boost-1_61</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\Qt3DCore;$(QTDIR)\include\Qt3DAnimation;$(QTDIR)\include\Qt3DExtras;$(QTDIR)\include\Qt3DInput;$(QTDIR)\include\Qt3DLogic;$(QTDIR)\include\Qt3DRender;$(QTDIR)\include\Qt3DQuick;$(QTDIR)\include\Qt3DQuickAnimation;$(QTDIR)\include\Qt3DQuickExtras;$(QTDIR)\include\Qt3DQuickInput;$(QTDIR)\include\Qt3DQuickRender;$(QTDIR)\include\Qt3DQuickScene2D;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtMultimediaWidgets;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtOpenGLExtensions;$(QTDIR)\include\QtWidgets</IncludePath>
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Common.h" />
+    <ClInclude Include="Conversions.h" />
+    <ClInclude Include="PointCloudFile.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="lang_en.ts" />
+    <None Include="lang_zh.ts" />
+    <None Include="lang_zh_CN.ts" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
+    <Import Project="$(QtMsBuild)\qt.targets" />
+  </ImportGroup>
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties MocDir=".\GeneratedFiles\$(ConfigurationName)" UicDir=".\GeneratedFiles" RccDir=".\GeneratedFiles" lupdateOptions="" lupdateOnBuild="0" lreleaseOptions="" Qt5Version_x0020_x64="msvc2015_64" MocOptions="" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
